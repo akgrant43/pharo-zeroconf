@@ -1,5 +1,10 @@
 script generation
 generateLinuxScriptTest
+	"Notify the user that real-time priority threads are required"
+	"The VM generates the same warning if it can't change the thread priority.
+	If this method is changed,
+	https://github.com/pharo-project/pharo-vm/blob/master/opensmalltalk-vm/platforms/unix/vm/sqUnixHeartbeat.c
+	beatStateMachine() should also be reviewed."
 	super generateLinuxScriptTest.
 	self 
 		<<== 'REMEMBER ULIMITS REQUIREMENTS'
